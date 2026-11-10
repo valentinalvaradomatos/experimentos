@@ -1,0 +1,24 @@
+body {
+  background-color: #c1f3fa;
+  padding: 20px;
+  border: 1.5cm solid #c1f3fa;
+  border-bottom: 1px solid #c1f3fa;
+}
+
+p {
+  margin: 0;
+}
+
+article {
+  margin-bottom: 24px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 20px;
+  border-top: 0px solid #c1f3fa;
+  padding-top: 30px;
+}
