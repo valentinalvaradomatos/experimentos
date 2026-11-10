@@ -12,6 +12,8 @@ p {
 
 article {
   margin-bottom: 24px;
+  padding-left: 55px;
+  padding-right: 55px;
 }
 
 header {
@@ -24,6 +26,19 @@ footer {
   padding-top: 30px;
 }
 .title {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: hsl(0, 0%, 0%);
+}
+h4 {
+  font-family:monospace;
+  color: hsl(0, 2%, 24%);
+}
+p {
+  font-family:sans-serif;
+  font-size: 16px;
 }
