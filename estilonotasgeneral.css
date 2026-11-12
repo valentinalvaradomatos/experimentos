@@ -1,9 +1,9 @@
 body {
   font-family:'Times New Roman', Times, serif;
-  background-color: hsl(284, 88%, 93%);
+  background-color: hwb(12 85% 1%);
   padding: 20px;
-  border: 1.5cm solid hsl(284, 88%, 93%) ;
-  border-bottom: 1px solid hsl(284, 88%, 93%) ;
+  border: 1.5cm solid hwb(12 85% 1%);
+  border-bottom: 1px solid hwb(12 85% 1%);
 }
 
 p {
@@ -22,7 +22,7 @@ header {
 
 footer {
   margin-top: 20px;
-  border-top: 0px solid hsl(284, 88%, 93%);
+  border-top: 0px solid hwb(12 85% 1%);
   padding-top: 30px;
 }
 .title {
@@ -36,7 +36,7 @@ a {
 }
 h4 {
   font-family:monospace;
-  color: hsl(0, 2%, 24%);
+  color: hsl(0, 0%, 0%);
 }
 p {
   font-family:sans-serif;
