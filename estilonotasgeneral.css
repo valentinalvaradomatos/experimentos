@@ -6,6 +6,10 @@ body {
   border-bottom: 1px solid hwb(12 85% 1%);
 }
 
+*, *::before, *::after { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
 a:visited {
   color: rgb(0, 51, 255);
 }
@@ -61,13 +65,42 @@ nav {
   color: hsl(0, 0%, 0%);
   margin-bottom: 20px;
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.5rem;
+  position: static;
+}
+
 nav a {
   text-decoration: sans-serif;
   font-weight: italic;
   color: hsl(238, 100%, 50%);
 }
+
 nav a:visited {
   text-decoration: sans-serif;
   font-weight: italic;
-  color: hsl(0, 100%, 50%);
+  color: #000;
+}
+
+nav a:active,
+nav a[aria-current="page"] { color: hsl(281, 60%, 62%); }
+
+.columna {
+  display: block;
+  flex: 1 0 auto;
+}
+
+.columna > header { margin: 0; }
+.columna > main { min-width: 0; }
+.columna > main > article { padding-left: 0; padding-right: 0; }
+body > footer { margin-top: auto; }
+
+@media (max-width: 600px) {
+  nav { gap: 0.8rem; font-size: 12px; }
+  article { padding-left: 0; padding-right: 0; }
 }

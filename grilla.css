@@ -19,13 +19,15 @@ body {
 }
 
 .site-header {
-  padding: 2rem 5vw;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
 .site-header nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: 1rem 2.4rem;
 }
 
@@ -41,11 +43,17 @@ body {
   text-decoration: underline;
   text-underline-offset: 0.4rem;
 }
+.site-header a:visited { color: #000; }
+.site-header a:active,
+.site-header a[aria-current="page"] { color: hsl(281, 60%, 62%); }
 
 .container {
-  width: min(110rem, 90%);
-  margin: 2rem auto 5rem;
+  width: 100%;
+  margin: 0;
+  grid-column: 2;
 }
+
+body { display: block; }
 
 h1 {
   margin: 0 0 2rem;
@@ -61,8 +69,25 @@ h1 {
 }
 
 .gallery__item {
+  position: relative;
   min-width: 0;
   margin: 0;
+  overflow: hidden;
+}
+
+.gallery__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFF269;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.gallery__item:hover::after,
+.gallery__item:focus-within::after {
+  opacity: 1;
 }
 
 .gallery__img {
@@ -79,9 +104,11 @@ footer {
 
 @media (max-width: 700px) {
   .container {
-    width: 92%;
+    width: 100%;
     margin-top: 1rem;
   }
+
+  .site-header, .container { margin-left: 0; margin-right: 0; }
 
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -95,6 +122,16 @@ body {
   border: 1.5cm solid hwb(12 85% 1%);
   border-bottom: 1px solid hwb(12 85% 1%);;
 }
+
+/* Mantiene el mismo marco, margen del menú y comienzo del contenido que dossier. */
+body { margin: 8px; padding: 20px; border: 1.5cm solid hwb(12 85% 1%); }
+.site-header { padding: 0; margin: 0 0 20px; }
+.site-header nav { margin-bottom: 20px; }
+.container { width: 100%; margin: 0; }
+html, body { min-height: 100%; }
+body { display: flex; flex-direction: column; min-height: 100vh; }
+.container { flex: 1 0 auto; }
+body > footer { margin-top: auto; }
 a:visited { color: rgb(0, 51, 255); }  
 p {
   margin: 0;
@@ -146,5 +183,5 @@ nav a {
 nav a:visited {
   text-decoration: sans-serif;
   font-weight: italic;
-  color: hsl(0, 100%, 50%);
+  color: hsl(281, 60%, 62%);
 }
